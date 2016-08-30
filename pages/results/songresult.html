@@ -1,0 +1,16 @@
+<div>
+    <h2>iTunes song search for {{ artist }}</h2></div>
+<hr>
+
+<!-- show message when no result is found -->
+<div ng-if="iTunesResult.results.length === 0">
+    <h2>No results found for {{ artist }}</h2>
+</div>
+
+<div ng-repeat="song in iTunesResult.results">
+    <div class="row">
+        <div class="col-md-12">
+            <song-result the-song="song"></song-result>
+        </div>
+    </div>
+</div>

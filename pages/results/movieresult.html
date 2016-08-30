@@ -1,0 +1,15 @@
+<div><h2>iTunes Movies search for {{ artist }}</h2></div>
+<hr>
+
+<!-- show message when no result is found -->
+<div ng-if="iTunesResult.results.length === 0">
+    <h2>No results found for {{ artist }}</h2>
+</div>
+
+<div ng-repeat="movie in iTunesResult.results">
+    <div class="row">
+        <div class="col-md-12">
+            <movie-result the-movie="movie"></movie-result>
+        </div>
+    </div>
+</div>

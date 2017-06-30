@@ -9,12 +9,16 @@
     
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/sidenavstyle.css">
+    <link rel="stylesheet" href="assets/carousel.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.5.0-rc.2/angular-resource.min.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <script src="app.js"></script> 
     <script src="routes.js"></script> 
@@ -25,10 +29,14 @@
 
 <body> 
     <header>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top" id="sidebar-wrapper" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#/"><strong>iTunes Search App</strong></a>
+                    <a class="navbar-brand" href="#/">
+                        <i class="fa fa-apple fa-fw"></i>
+                        <strong>&nbsp;iTunes Search App
+                        </strong>
+                    </a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle nav</span>
                         <span class="icon-bar"></span>
@@ -39,11 +47,21 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#/">Home</a></li>
-                        <li><a href="#/songs">Songs</a></li>
-                        <li><a href="#/albums">Albums</a></li>
-                        <li><a href="#/podcast">Podcast</a></li>
-                        <li><a href="#/movies">Movies</a></li>
+                        <li class="active">
+                            <a href="#/"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+                        </li>
+                        <li>
+                            <a href="#/songs"><i class="fa fa-music fa-fw"></i>&nbsp; Songs</a>
+                        </li>
+                        <li>
+                            <a href="#/albums"><i class="fa fa-picture-o fa-fw"></i>&nbsp; Albums</a>
+                        </li>
+                        <li>
+                            <a href="#/podcast"><i class="fa fa-podcast fa-fw"></i>&nbsp; Podcast</a>
+                        </li>
+                        <li>
+                            <a href="#/movies"><i class="fa fa-film fa-fw"></i>&nbsp; Movies</a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -51,28 +69,29 @@
         </nav>
     </header>
 
-    <div class="container"> 
+    <div class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active"></div>
+            <div class="item"></div>
+            <div class="item"></div> 
+        </div>
+    </div>
+    
+    <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 center">
                 <div ng-view></div> 
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
         <p>William Gilbert Go</p>
-        <p>Copyright (c) 2016</p>
-    </div>
+        <p>Copyright (c) 2015</p>
+    </div>  
     
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="assets/effects.js"></script>
-    <script>
-        $(document).on('click','.navbar-collapse.in',function(e) {
-            if( $(e.target).is('a') ) {
-                $(this).collapse('hide');
-            }
-        }); 
-    </script>
+    
 </body> 
 </html>

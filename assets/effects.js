@@ -1,22 +1,26 @@
-var images = new Array(
-    'assets/images/appledesktop.jpg',
-    'assets/images/earphone.jpg',
-    'assets/images/system.jpg',
-    'assets/images/tunes.jpg'
-);
- 
+// Header navigation bar collapse (hamburger)
+$(document).on("click", ".navbar-collapse.in", function (e) {
+    if ($(e.target).is("a")) {
+        $(this).collapse("hide");
+    }
+});
 
-var nextImage = 0;
+/* Menu list set active on click */
+$(".nav li").on("click", function() {
+      $(".nav li").removeClass("active");
+      $(this).addClass("active");
+});
 
-doSlideshow();
+// Carousel effect
+$(".carousel").carousel();
 
-
-function doSlideshow() {
-    if(nextImage >= images.length) { nextImage = 0; }
-    $("body")
-        .css('background-image', 'url("'+images[nextImage++]+'")') 
-        .fadeIn(1000, function() {
-            setTimeout(doSlideshow, 5000);
-        });
+// Sidenav overlay effect
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
 }
 
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}

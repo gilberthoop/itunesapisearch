@@ -1,26 +1,46 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     transition: background 0.5s linear;
     -moz-transition: background 0.5s linear; /* Firefox 4 */
     -webkit-transition: background 0.5s linear; /* Safari and Chrome */
     -o-transition: background 0.5s linear; /* Opera */
-    background-size: cover; 
-    color: white;
-    text-align: center;
     font-family: 'Lato', sans-serif;
-}
-
-input {
-    font-size: 1.5em !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
 }
 
 h1 {
+    
+    color: white;
+    text-align: center;
     font-size: 50pt;
 }
 
-input {
-    margin-top: 5%; 
+h2 {
+    
+    color: white;
     text-align: center;
-    font-size: 20pt;
+    margin-top: 20%;
+}
+
+h4 {
+    
+    color: white;
+    text-align: center; 
+}
+
+input { 
+    text-align: center;
+    font-size: 1.5em !important;
+}
+
+div .form-group {
+    text-align: center;
 }
 
 .row {
@@ -32,11 +52,20 @@ input {
     margin-top: 5px;
 }
 
-#main {
+.main {
     margin-top: 25%; 
 }
- 
+
+.navbar-nav li a {
+    font-weight: bold;
+}
+
+.fa {
+    font-size: 18px;
+}
 
 .footer {
     margin-top: 10%; 
-}
+    text-align: center;
+    color: white;
+} 

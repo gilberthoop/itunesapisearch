@@ -18,7 +18,8 @@ h1 {
     
     color: white;
     text-align: center;
-    font-size: 50pt;
+    font-size: 50pt; 
+    -webkit-text-stroke: 0.25px black;
 }
 
 h2 {
